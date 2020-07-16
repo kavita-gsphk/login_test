@@ -5,6 +5,7 @@ $email = "";
 $password_2 = "";
 $password_1 = "";
 $error = array();
+$db_user = '3508469_practice';
 $db = mysqli_connect('localhost', 'root', '', 'practice') or die("dont connect");
 if (isset($_POST['reg_user'])) {
     if (!isset($_POST['username'])) {
@@ -33,6 +34,7 @@ if (isset($_POST['reg_user'])) {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         array_push($error, "email must be valid");
     }
+
     $user_check_query = "SELECT * FROM user where username='$username' or email='$email' LIMIT 1";
     $result = mysqli_query($db, $user_check_query);
     $user = mysqli_fetch_assoc($result);
@@ -67,17 +69,18 @@ if (isset($_POST['login_user'])) {
         $password =  mysqli_real_escape_string($db, $_POST['lo_password']);
     }
     if (empty($username)) {
-        array_push($error_1, 'username must be provide');
+        array_push($error_1, 'username must be provided');
     }
     if (empty($password)) {
-        array_push($error_1, 'password must be provide');
+        array_push($error_1, 'password must be provided');
     }
     if (count($error_1) == 0) {
         $password = md5($password);
-        $query = "SELECT * FROM user WHERE username='$username' AND pass='$password'";
+        $query = "SELECT * FROM user WHERE username='$username' or email='$username' AND pass='$password'";
         $result = mysqli_query($db, $query);
+        $row = mysqli_fetch_row($result);
         if (mysqli_num_rows($result)) {
-            $_SESSION['username'] = $username;
+            $_SESSION['username'] = $row[1];
             $_SESSION['success'] = 'logged in succesfully';
             header('location:index.php');
         } else {

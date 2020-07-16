@@ -4,9 +4,7 @@
 	padding: 0;
 	font-family: "Montserrat", sans-serif;
 }
-html {
-	background-color: rgb(40, 40, 100);
-}
+
 li,
 a,
 button {
@@ -14,50 +12,9 @@ button {
 	font-weight: 500;
 	font-size: 16px;
 	color: rgb(40, 40, 100);
-	background-color: white;
 	text-decoration: none;
 }
-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 10px 10%;
-	background-color: white;
-}
-.img {
-	background-color: burlywood;
-}
-.logo {
-	width: 5%;
-	cursor: pointer;
-}
-.head_2 {
-	display: none;
-}
 
-@media screen and (max-width: 600px) {
-	.head_1 {
-		display: none;
-	}
-	.head_2 {
-		display: block;
-	}
-}
-.nav_link {
-	list-style: none;
-	background-color: white;
-}
-.nav_link li {
-	display: inline-block;
-	padding: 0px 20px;
-}
-.nav_link li a {
-	transition: all 0.2s ease 0s;
-}
-.nav_link li a:hover {
-	color: rgb(21, 21, 95);
-	font-weight: 600;
-}
 button {
 	padding: 9px 25px;
 	background-color: rgb(40, 40, 100);
@@ -72,65 +29,39 @@ button:hover {
 }
 button[type="submit"] {
 	margin-left: 35%;
-	margin-top: 40px;
-}
-.login {
-	color: chartreuse;
-}
-.popup {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100vh;
-	z-index: 2;
-	background-color: rgba(16, 16, 36, 0.9);
-}
-.popup_hidden {
-	display: none;
+	margin-top: 10px;
 }
 
-.pop_sec {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 40%;
-	background-color: white;
-}
-@media screen and (max-width: 680px) {
-	.pop_sec {
-		width: 65%;
-	}
-}
-@media screen and (max-width: 600px) {
-	.pop_sec {
-		width: 90%;
-	}
-}
-.cancel {
-	float: right;
-	cursor: pointer;
-	margin-top: 10px;
-	margin-right: 2%;
-}
-.cancel:hover {
-	color: rgb(88, 212, 57);
-}
 form {
 	background-color: white;
 	color: rgba(16, 16, 36);
 	width: 50%;
-	margin-left: 25%;
-	margin-top: 40px;
-	margin-bottom: 40px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	padding-top: 30px;
 	padding-bottom: 30px;
+}
+.form {
+	top: 65vh;
 }
 @media screen and (max-width: 600px) {
 	form {
 		width: 90%;
-		margin-left: 5%;
+	}
+}
+@media screen and (max-height: 600px) {
+	form {
+		top: 60vh;
+	}
+	.form {
+		top: 75vh;
+	}
+}
+@media screen and (max-height: 480px) {
+	.form {
+		top: 95vh;
 	}
 }
 

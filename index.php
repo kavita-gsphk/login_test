@@ -14,18 +14,26 @@ if (isset($_GET['logout'])) {
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" type="image/jpg" href="images/logo.jpg">
-    <title>Online-test</title>
+    <meta charset="utf-8">
+    <title>Headstart</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" type="image/png" href="images/favicon3.png">
+
+    <!-- Bootstrap CSS File -->
+
+    <!-- Main Stylesheet File -->
+    <link href="style_1.css" rel="stylesheet">
 </head>
 
 <body>
+
     <div class="head_1">
         <header>
-            <img src="images/logo.jpg" alt="logo" class="logo">
+            <img src="images/favicon3.png" alt=" logo" class="logo">
             <nav>
                 <ul class="nav_link">
                     <li><a>
